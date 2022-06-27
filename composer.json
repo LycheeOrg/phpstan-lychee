@@ -21,14 +21,11 @@
     ],
     "validate-files": [
       "vendor/bin/parallel-lint --exclude vendor ."
-    ],
-    "phpstan": [
-      "vendor/bin/phpstan analyze"
     ]
   },
   "autoload": {
     "psr-4": {
-      "PHPStan\\": "phpstan/"
+      "Lycheeorg\\PHPStan\\": "phpstan/"
     }
   },
   "config": {
