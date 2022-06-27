@@ -1,8 +1,9 @@
 includes:
-	- vendor/nunomaduro/larastan/extension.neon
-	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
-	- vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
-	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- ../../../vendor/nunomaduro/larastan/extension.neon
+	- ../../../vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- ../../../vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+	- ../../../vendor/phpstan/phpstan-strict-rules/rules.neon
+# ../../../ is required because this file is use as base and we want to include all those extra rules
 
 services:
 	-
@@ -15,11 +16,11 @@ services:
 			- phpstan.rules.rule
 
 	-
-		class: PHPStan\Rules\DisallowedConstructs\DisallowedBooleanCastRule
+		class: Lycheeorg\PHPStan\Rules\DisallowedConstructs\DisallowedBooleanCastRule
 		tags:
 			- phpstan.rules.rule
 	-
-		class: PHPStan\Rules\DisallowedConstructs\DisallowedBooleanConversionRule
+		class: Lycheeorg\PHPStan\Rules\DisallowedConstructs\DisallowedBooleanConversionRule
 		tags:
 			- phpstan.rules.rule
 

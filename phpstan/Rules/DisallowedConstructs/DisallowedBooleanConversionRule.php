@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace lycheeorg\PHPStan\Rules\DisallowedConstructs;
+namespace Lycheeorg\PHPStan\Rules\DisallowedConstructs;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
