@@ -134,11 +134,6 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
-	# 	class: Symplify\PHPStanRules\Rules\PrefixAbstractClassRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#uppercaseconstantrule
 		class: Symplify\PHPStanRules\Rules\UppercaseConstantRule
 		tags:
