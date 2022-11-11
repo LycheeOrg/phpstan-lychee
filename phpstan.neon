@@ -114,10 +114,10 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomissingarrayshapereturnarrayrule
-	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMissingArrayShapeReturnArrayRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomissingarrayshapereturnarrayrule
+		class: Symplify\PHPStanRules\Rules\Explicit\NoMissingArrayShapeReturnArrayRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomixedarraydimfetchrule
 	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMixedArrayDimFetchRule
