@@ -104,10 +104,10 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noabstractmethodrule
-	# 	class: Symplify\PHPStanRules\Rules\NoAbstractMethodRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noabstractmethodrule
+		class: Symplify\PHPStanRules\Rules\NoAbstractMethodRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noconstantinterfacerule
 	# 	class: Symplify\PHPStanRules\Rules\Enum\NoConstantInterfaceRule
