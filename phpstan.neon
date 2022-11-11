@@ -29,10 +29,10 @@ services:
 		tags:
 			- phpstan.rules.rules
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checknottestsnamespaceoutsidetestsdirectoryrule
-	# 	class: Symplify\PHPStanRules\Rules\CheckNotTestsNamespaceOutsideTestsDirectoryRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checknottestsnamespaceoutsidetestsdirectoryrule
+		class: Symplify\PHPStanRules\Rules\CheckNotTestsNamespaceOutsideTestsDirectoryRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
 	# 	class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
