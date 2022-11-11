@@ -89,10 +89,10 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noissetonobjectrule
-	# 	class: Symplify\PHPStanRules\Rules\NoIssetOnObjectRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noissetonobjectrule
+		class: Symplify\PHPStanRules\Rules\NoIssetOnObjectRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
 	# 	class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
