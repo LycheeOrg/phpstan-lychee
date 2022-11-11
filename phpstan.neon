@@ -2,6 +2,11 @@ includes:
 	- ../../../vendor/phpstan/phpstan-deprecation-rules/rules.neon
 	- ../../../vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
 	- ../../../vendor/phpstan/phpstan-strict-rules/rules.neon
+	- ../../../vendor/symplify/phpstan-rules/config/services/services.neon
+	# - ../../../vendor/symplify/phpstan-rules/config/array-rules.neon
+	- ../../../vendor/symplify/phpstan-rules/config/packages/cognitive-complexity/cognitive-complexity-services.neon
+	# - ../../../vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
+	# - ../../../BoolishClassMethodPrefixRule
 # ../../../ is required because this file is use as base and we want to include all those extra rules
 
 services:
@@ -9,6 +14,7 @@ services:
 		class: Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
 		tags:
 			- phpstan.rules.rule
+
 	-
 		class: SlamPhpStan\UnusedVariableRule
 		tags:
@@ -21,7 +27,122 @@ services:
 	-
 		class: Lycheeorg\PHPStan\Rules\DisallowedConstructs\DisallowedBooleanConversionRule
 		tags:
-			- phpstan.rules.rule
+			- phpstan.rules.rules
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checknottestsnamespaceoutsidetestsdirectoryrule
+	# 	class: Symplify\PHPStanRules\Rules\CheckNotTestsNamespaceOutsideTestsDirectoryRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
+	# 	class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenanonymousclassrule
+	# 	class: Symplify\PHPStanRules\Rules\ForbiddenAnonymousClassRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddencomplexforeachifexprrule
+	# 	class: Symplify\PHPStanRules\Rules\Complexity\ForbiddenComplexForeachIfExprRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenfunccallrule
+	# 	class: Symplify\PHPStanRules\Rules\ForbiddenFuncCallRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+	# 	arguments:
+	# 		forbiddenFunctions:
+	# 			eval: 'eval is not allowed'
+	# 			dd: 'seems you missed some dd debugging function'
+	# 			dump: 'seems you missed some dump debugging function'
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenmultipleclasslikeinonefilerule
+	# 	class: Symplify\PHPStanRules\Rules\ForbiddenMultipleClassLikeInOneFileRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
+	# 	class: Symplify\PHPStanRules\Rules\ForbiddenParamTypeRemovalRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#NoDuplicatedRegexRule
+	# 	class: Symplify\PHPStanRules\Rules\Domain\NoDuplicatedRegexRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noconstructorintestrule
+	# 	class: Symplify\PHPStanRules\Rules\NoConstructorInTestRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nodefaultexceptionrule
+	# 	class: Symplify\PHPStanRules\Rules\NoDefaultExceptionRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noemptyclassrule
+	# 	class: Symplify\PHPStanRules\Rules\NoEmptyClassRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noissetonobjectrule
+	# 	class: Symplify\PHPStanRules\Rules\NoIssetOnObjectRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
+	# 	class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
+	# 	class: Symplify\PHPStanRules\Rules\PrefixAbstractClassRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noabstractmethodrule
+	# 	class: Symplify\PHPStanRules\Rules\NoAbstractMethodRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noconstantinterfacerule
+	# 	class: Symplify\PHPStanRules\Rules\Enum\NoConstantInterfaceRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomissingarrayshapereturnarrayrule
+	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMissingArrayShapeReturnArrayRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomixedarraydimfetchrule
+	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMixedArrayDimFetchRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nonullablearraypropertyrule
+	# 	class: Symplify\PHPStanRules\Rules\NoNullableArrayPropertyRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noprotectedelementinfinalclassrule
+	# 	class: Symplify\PHPStanRules\Rules\NoProtectedElementInFinalClassRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
+	# 	class: Symplify\PHPStanRules\Rules\PrefixAbstractClassRule
+	# 	tags:
+	# 		- phpstan.rules.rule
+
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#uppercaseconstantrule
+	# 	class: Symplify\PHPStanRules\Rules\UppercaseConstantRule
+	# 	tags:
+	# 		- phpstan.rules.rule
 
 parameters:
 	level: 7
