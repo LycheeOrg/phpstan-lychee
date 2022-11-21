@@ -100,7 +100,7 @@ services:
 	# 		- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
-		class: Symplify\PHPStanRules\Rules\PrefixAbstractClassRule
+		class: Lycheeorg\PHPStan\Rules\NamingConventions\PrefixAbstractClassRule
 		tags:
 			- phpstan.rules.rule
 
