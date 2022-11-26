@@ -124,10 +124,10 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nonullablearraypropertyrule
-	# 	class: Symplify\PHPStanRules\Rules\NoNullableArrayPropertyRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nonullablearraypropertyrule
+		class: Symplify\PHPStanRules\Rules\NoNullableArrayPropertyRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noprotectedelementinfinalclassrule
 	# 	class: Symplify\PHPStanRules\Rules\NoProtectedElementInFinalClassRule
