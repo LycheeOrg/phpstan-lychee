@@ -34,10 +34,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
-	# 	class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
+		class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenanonymousclassrule
 	# 	class: Symplify\PHPStanRules\Rules\ForbiddenAnonymousClassRule
