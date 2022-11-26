@@ -59,10 +59,10 @@ services:
 				dd: 'seems you missed some dd debugging function'
 				dump: 'seems you missed some dump debugging function'
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenmultipleclasslikeinonefilerule
-	# 	class: Symplify\PHPStanRules\Rules\ForbiddenMultipleClassLikeInOneFileRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenmultipleclasslikeinonefilerule
+		class: Symplify\PHPStanRules\Rules\ForbiddenMultipleClassLikeInOneFileRule
+		tags:
+			- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
 	# 	class: Symplify\PHPStanRules\Rules\ForbiddenParamTypeRemovalRule
