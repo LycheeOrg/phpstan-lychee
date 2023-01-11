@@ -10,8 +10,8 @@ This includes:
 - phpstan/phpstan-strict-rules &mdash; strict and opinionated rules
 - thecodingmachine/phpstan-safe-rule &mdash; Ensure the use of `Safe` code
 - nunomaduro/larastan &mdash; stubs for Laravel
-- ergebnis/phpstan-rules &mdash; No error suppression: `@`
 - slam/phpstan-extensions &mdash; No unused variables
+- symplify/phpstan-rules &mdash; A lot of stricter rules with regard to coding standards.
 
 ## Installation
 

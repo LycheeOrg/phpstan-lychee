@@ -11,11 +11,6 @@ includes:
 
 services:
 	-
-		class: Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
-		tags:
-			- phpstan.rules.rule
-
-	-
 		class: SlamPhpStan\UnusedVariableRule
 		tags:
 			- phpstan.rules.rule
@@ -94,10 +89,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
-	# 	class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
+		class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
+		tags:
+			- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
 		class: Lycheeorg\PHPStan\Rules\NamingConventions\PrefixAbstractClassRule
@@ -138,6 +133,19 @@ services:
 		class: Symplify\PHPStanRules\Rules\UppercaseConstantRule
 		tags:
 			- phpstan.rules.rule
+
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#switchtomatchspotterrule
+		class: Symplify\PHPStanRules\Rules\Spotter\SwitchToMatchSpotterRule
+		tags:
+			- phpstan.rules.rule
+
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
+		class: Symplify\PHPStanRules\Rules\ForbiddenNodeRule
+		tags:
+			- phpstan.rules.rule
+		arguments:
+			forbiddenNodes:
+				- PhpParser\Node\Expr\ErrorSuppress # disallow the use of '@' to silence errors
 
 parameters:
 	level: 7
