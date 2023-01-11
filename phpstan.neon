@@ -15,11 +15,6 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	- # disallow the use of strings as class name and force the use of ::class
-		class: SlamPhpStan\StringToClassRule
-		tags:
-			- phpstan.rules.rule
-
 	-
 		class: Lycheeorg\PHPStan\Rules\DisallowedConstructs\DisallowedBooleanCastRule
 		tags:
@@ -139,6 +134,11 @@ services:
 		tags:
 			- phpstan.rules.rule
 
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#switchtomatchspotterrule
+		class: Symplify\PHPStanRules\Rules\Spotter\SwitchToMatchSpotterRule
+		tags:
+			- phpstan.rules.rule
+
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
 		class: Symplify\PHPStanRules\Rules\ForbiddenNodeRule
 		tags:
@@ -146,6 +146,7 @@ services:
 		arguments:
 			forbiddenNodes:
 				- PhpParser\Node\Expr\ErrorSuppress # disallow the use of '@' to silence errors
+				- PhpParser\Node\Stmt\Switch_ # no more switch()
 
 parameters:
 	level: 7
