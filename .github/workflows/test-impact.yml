@@ -3,6 +3,8 @@ name: Test Impact
 # Run this workflow every time a new commit pushed to your repository
 on:
   push:
+    tags-ignore:
+      - '**'
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -30,6 +32,7 @@ jobs:
       - kill_previous
     steps:
       - name: Extract branch name
+        if:
         shell: bash
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         id: extract_branch
