@@ -89,10 +89,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
-	# 	class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
+		class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
+		tags:
+			- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
 		class: Lycheeorg\PHPStan\Rules\NamingConventions\PrefixAbstractClassRule
@@ -131,6 +131,11 @@ services:
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#uppercaseconstantrule
 		class: Symplify\PHPStanRules\Rules\UppercaseConstantRule
+		tags:
+			- phpstan.rules.rule
+
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#switchtomatchspotterrule
+		class: Symplify\PHPStanRules\Rules\Spotter\SwitchToMatchSpotterRule
 		tags:
 			- phpstan.rules.rule
 
