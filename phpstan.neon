@@ -11,11 +11,6 @@ includes:
 
 services:
 	-
-		class: Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
-		tags:
-			- phpstan.rules.rule
-
-	-
 		class: SlamPhpStan\UnusedVariableRule
 		tags:
 			- phpstan.rules.rule
@@ -138,6 +133,14 @@ services:
 		class: Symplify\PHPStanRules\Rules\UppercaseConstantRule
 		tags:
 			- phpstan.rules.rule
+
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
+		class: Symplify\PHPStanRules\Rules\ForbiddenNodeRule
+		tags:
+			- phpstan.rules.rule
+		arguments:
+			forbiddenNodes:
+				- PhpParser\Node\Expr\ErrorSuppress # disallow the use of '@' to silence errors
 
 parameters:
 	level: 7
