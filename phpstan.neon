@@ -146,7 +146,6 @@ services:
 		arguments:
 			forbiddenNodes:
 				- PhpParser\Node\Expr\ErrorSuppress # disallow the use of '@' to silence errors
-				- PhpParser\Node\Stmt\Switch_ # no more switch()
 
 parameters:
 	level: 7
