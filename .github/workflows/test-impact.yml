@@ -3,8 +3,8 @@ name: Test Impact
 # Run this workflow every time a new commit pushed to your repository
 on:
   push:
-    tags-ignore:
-      - '**'
+    # tags-ignore:
+    #   - '**'
     paths-ignore:
       - '**/*.md'
   pull_request:
