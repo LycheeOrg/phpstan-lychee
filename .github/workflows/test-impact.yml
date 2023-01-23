@@ -32,7 +32,6 @@ jobs:
       - kill_previous
     steps:
       - name: Extract branch name
-        if:
         shell: bash
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         id: extract_branch
