@@ -5,7 +5,6 @@ includes:
 	- ../../../vendor/symplify/phpstan-rules/config/services/services.neon
 	# - ../../../vendor/symplify/phpstan-rules/config/array-rules.neon
 	- ../../../vendor/symplify/phpstan-rules/config/packages/cognitive-complexity/cognitive-complexity-services.neon
-	# - ../../../vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
 	# - ../../../BoolishClassMethodPrefixRule
 # ../../../ is required because this file is use as base and we want to include all those extra rules
 
@@ -34,11 +33,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	# Not applicable because requires Contrat instead of Contracts
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkrequiredinterfaceincontractnamespacerule
-	# 	class: Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
-	# 	tags:
-	# 		- phpstan.rules.rule
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkrequiredinterfaceincontractnamespacerule
+		class: Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
+		tags:
+			- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
 		class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
