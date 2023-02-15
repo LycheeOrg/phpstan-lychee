@@ -3,8 +3,10 @@ name: Test Impact
 # Run this workflow every time a new commit pushed to your repository
 on:
   push:
-    tags-ignore:
+    branches:
       - '**'
+    tags-ignore:
+      - 'v*'
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -32,7 +34,6 @@ jobs:
       - kill_previous
     steps:
       - name: Extract branch name
-        if:
         shell: bash
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         id: extract_branch
@@ -52,7 +53,7 @@ jobs:
           repository: 'LycheeOrg/Lychee'
 
       - name: Fix composer.json
-        run: composer require --dev "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
+        run: composer require --dev -W "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze
@@ -83,7 +84,7 @@ jobs:
           repository: 'LycheeOrg/php-exif'
 
       - name: Fix composer.json
-        run: composer require --dev "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
+        run: composer require --dev -W "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze

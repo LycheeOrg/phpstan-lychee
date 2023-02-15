@@ -5,7 +5,6 @@ includes:
 	- ../../../vendor/symplify/phpstan-rules/config/services/services.neon
 	# - ../../../vendor/symplify/phpstan-rules/config/array-rules.neon
 	- ../../../vendor/symplify/phpstan-rules/config/packages/cognitive-complexity/cognitive-complexity-services.neon
-	# - ../../../vendor/symplify/phpstan-rules/config/code-complexity-rules.neon
 	# - ../../../BoolishClassMethodPrefixRule
 # ../../../ is required because this file is use as base and we want to include all those extra rules
 
@@ -24,8 +23,18 @@ services:
 		tags:
 			- phpstan.rules.rules
 
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkclassnamespacefollowpsr4rule
+		class: Symplify\PHPStanRules\Rules\CheckClassNamespaceFollowPsr4Rule
+		tags:
+			- phpstan.rules.rule
+
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checknottestsnamespaceoutsidetestsdirectoryrule
 		class: Symplify\PHPStanRules\Rules\CheckNotTestsNamespaceOutsideTestsDirectoryRule
+		tags:
+			- phpstan.rules.rule
+
+	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkrequiredinterfaceincontractnamespacerule
+		class: Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
 		tags:
 			- phpstan.rules.rule
 
@@ -33,11 +42,6 @@ services:
 		class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
 		tags:
 			- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenanonymousclassrule
-	# 	class: Symplify\PHPStanRules\Rules\ForbiddenAnonymousClassRule
-	# 	tags:
-	# 		- phpstan.rules.rule
 
 	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddencomplexforeachifexprrule
 	# 	class: Symplify\PHPStanRules\Rules\Complexity\ForbiddenComplexForeachIfExprRule
@@ -99,33 +103,8 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noabstractmethodrule
-	# 	class: Symplify\PHPStanRules\Rules\NoAbstractMethodRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noconstantinterfacerule
-		class: Symplify\PHPStanRules\Rules\Enum\NoConstantInterfaceRule
-		tags:
-			- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomissingarrayshapereturnarrayrule
-	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMissingArrayShapeReturnArrayRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nomixedarraydimfetchrule
-	# 	class: Symplify\PHPStanRules\Rules\Explicit\NoMixedArrayDimFetchRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nonullablearraypropertyrule
 		class: Symplify\PHPStanRules\Rules\NoNullableArrayPropertyRule
-		tags:
-			- phpstan.rules.rule
-
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noprotectedelementinfinalclassrule
-		class: Symplify\PHPStanRules\Rules\NoProtectedElementInFinalClassRule
 		tags:
 			- phpstan.rules.rule
 
