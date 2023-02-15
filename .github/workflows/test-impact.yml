@@ -53,7 +53,7 @@ jobs:
           repository: 'LycheeOrg/Lychee'
 
       - name: Fix composer.json
-        run: composer require --dev "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
+        run: composer require --dev -W "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze
@@ -84,7 +84,7 @@ jobs:
           repository: 'LycheeOrg/php-exif'
 
       - name: Fix composer.json
-        run: composer require --dev "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
+        run: composer require --dev -W "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze
