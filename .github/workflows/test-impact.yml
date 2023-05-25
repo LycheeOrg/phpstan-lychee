@@ -118,7 +118,7 @@ jobs:
         run: composer require --dev -W "lychee-org/phpstan-lychee":"dev-${{ steps.extract_branch.outputs.branch }}"
 
       - name: Run PHPStan
-        run: composer phpstan
+        run: vendor/bin/phpstan analyze
 
 
   execute_nested_sets:
