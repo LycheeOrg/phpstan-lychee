@@ -3,9 +3,7 @@ includes:
 	- ../../../vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
 	- ../../../vendor/phpstan/phpstan-strict-rules/rules.neon
 	- ../../../vendor/symplify/phpstan-rules/config/services/services.neon
-	# - ../../../vendor/symplify/phpstan-rules/config/array-rules.neon
-	# - ../../../vendor/symplify/phpstan-rules/config/packages/cognitive-complexity/cognitive-complexity-services.neon
-	# - ../../../BoolishClassMethodPrefixRule
+    - ../../../vendor/symplify/phpstan-rules/config/naming-rules.neon
 # ../../../ is required because this file is use as base and we want to include all those extra rules
 
 services:
@@ -28,25 +26,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checknottestsnamespaceoutsidetestsdirectoryrule
-		class: Symplify\PHPStanRules\Rules\CheckNotTestsNamespaceOutsideTestsDirectoryRule
-		tags:
-			- phpstan.rules.rule
-
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkrequiredinterfaceincontractnamespacerule
 		class: Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
 		tags:
 			- phpstan.rules.rule
-
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checksprintfmatchingtypesrule
-		class: Symplify\PHPStanRules\Rules\Missing\CheckSprintfMatchingTypesRule
-		tags:
-			- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddencomplexforeachifexprrule
-	# 	class: Symplify\PHPStanRules\Rules\Complexity\ForbiddenComplexForeachIfExprRule
-	# 	tags:
-	# 		- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenfunccallrule
 		class: Symplify\PHPStanRules\Rules\ForbiddenFuncCallRule
@@ -68,33 +51,8 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#NoDuplicatedRegexRule
-	# 	class: Symplify\PHPStanRules\Rules\Domain\NoDuplicatedRegexRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noconstructorintestrule
-	# 	class: Symplify\PHPStanRules\Rules\NoConstructorInTestRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nodefaultexceptionrule
-	# 	class: Symplify\PHPStanRules\Rules\NoDefaultExceptionRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
-	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noemptyclassrule
-	# 	class: Symplify\PHPStanRules\Rules\NoEmptyClassRule
-	# 	tags:
-	# 		- phpstan.rules.rule
-
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noissetonobjectrule
 		class: Symplify\PHPStanRules\Rules\NoIssetOnObjectRule
-		tags:
-			- phpstan.rules.rule
-
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#norightphpunitassertscalarrule
-		class: Symplify\PHPStanRules\Rules\PHPUnit\NoRightPHPUnitAssertScalarRule
 		tags:
 			- phpstan.rules.rule
 
@@ -113,10 +71,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#switchtomatchspotterrule
-		class: Symplify\PHPStanRules\Rules\Spotter\SwitchToMatchSpotterRule
-		tags:
-			- phpstan.rules.rule
+	# - # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#switchtomatchspotterrule
+	# 	class: Symplify\PHPStanRules\Rules\Spotter\SwitchToMatchSpotterRule
+	# 	tags:
+	# 		- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#forbiddenparamtyperemovalrule
 		class: Symplify\PHPStanRules\Rules\ForbiddenNodeRule
