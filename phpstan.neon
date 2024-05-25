@@ -129,6 +129,5 @@ services:
 parameters:
 	level: 7
 	reportMaybesInPropertyPhpDocTypes: false
-	checkMissingIterableValueType: false
 	featureToggles:
 		bleedingEdge: true
