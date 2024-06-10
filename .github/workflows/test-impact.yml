@@ -48,7 +48,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/Lychee'
 
@@ -79,7 +79,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/php-exif'
 
@@ -110,10 +110,9 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/laravel-nestedset'
-          ref: 'enable-phpstan'
 
       - name: Fix composer.json
         run: |
