@@ -48,7 +48,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/Lychee'
 
@@ -79,7 +79,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/php-exif'
 
@@ -90,7 +90,6 @@ jobs:
         run: vendor/bin/phpstan analyze
 
   execute_nested_sets:
-    if: ${{ false }}  # disable for now
     name: 1️⃣ PHP - Nested sets
     runs-on: ubuntu-latest
     needs:
@@ -111,10 +110,9 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'LycheeOrg/laravel-nestedset'
-          ref: 'enable-phpstan'
 
       - name: Fix composer.json
         run: |
