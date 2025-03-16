@@ -21,10 +21,6 @@ services:
 		tags:
 			- phpstan.rules.rules
 
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkclassnamespacefollowpsr4rule
-		class: Symplify\PHPStanRules\Rules\CheckClassNamespaceFollowPsr4Rule
-		tags:
-			- phpstan.rules.rule
 
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#checkrequiredinterfaceincontractnamespacerule
 		class: Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
@@ -51,18 +47,8 @@ services:
 	# 	tags:
 	# 		- phpstan.rules.rule
 
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#noissetonobjectrule
-		class: Symplify\PHPStanRules\Rules\NoIssetOnObjectRule
-		tags:
-			- phpstan.rules.rule
-
 	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#prefixabstractclassrule
 		class: Lycheeorg\PHPStan\Rules\NamingConventions\PrefixAbstractClassRule
-		tags:
-			- phpstan.rules.rule
-
-	- # https://github.com/symplify/phpstan-rules/blob/main/docs/rules_overview.md#nonullablearraypropertyrule
-		class: Symplify\PHPStanRules\Rules\NoNullableArrayPropertyRule
 		tags:
 			- phpstan.rules.rule
 
