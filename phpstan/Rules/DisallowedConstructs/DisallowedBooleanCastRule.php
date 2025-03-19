@@ -23,7 +23,7 @@ class DisallowedBooleanCastRule implements Rule
 	public function processNode(Node $node, Scope $scope): array
 	{
 		return [
-			RuleErrorBuilder::message('Cast to bool is forbidden.')->build(),
+			RuleErrorBuilder::message('Cast to bool is forbidden.')->identifier('casting.bool.forbidden')->build(),
 		];
 	}
 }
