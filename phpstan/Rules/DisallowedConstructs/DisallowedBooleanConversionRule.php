@@ -32,7 +32,7 @@ class DisallowedBooleanConversionRule implements Rule
 			return [
 				RuleErrorBuilder::message(
 					'Conversion to boolean is forbidden.'
-				)->build(),
+				)->identifier('casting.bool.forbidden')->build(),
 			];
 		} else {
 			return [];
