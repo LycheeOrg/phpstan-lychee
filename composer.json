@@ -10,7 +10,7 @@
         "phpstan/phpstan-deprecation-rules": "^2.0.1",
         "phpstan/phpstan-strict-rules": "^2.0.3",
         "slam/phpstan-extensions": "^6.6",
-        "squizlabs/php_codesniffer": "^3.11.3",
+        "squizlabs/php_codesniffer": "^3.11.3 || ^4.0.0",
         "symplify/phpstan-rules": "^14.4.1",
         "thecodingmachine/phpstan-safe-rule": "^1.4"
     },
