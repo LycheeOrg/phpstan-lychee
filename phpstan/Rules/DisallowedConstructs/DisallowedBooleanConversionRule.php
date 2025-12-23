@@ -23,10 +23,10 @@ class DisallowedBooleanConversionRule implements Rule
 	public function processNode(Node $node, Scope $scope): array
 	{
 		if (
-			$node->name->parts !== null &&
-			count($node->name->parts) === 1 && (
-				$node->name->parts[0] === 'boolval' ||
-				$node->name->parts[0] === '\boolval'
+			$node->name->parts !== null
+			&& count($node->name->parts) === 1 && (
+				$node->name->parts[0] === 'boolval'
+				|| $node->name->parts[0] === '\boolval'
 			)
 		) {
 			return [
